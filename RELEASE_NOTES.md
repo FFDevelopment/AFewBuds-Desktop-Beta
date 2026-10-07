@@ -9,7 +9,7 @@ AFewBuds desktop beta with the updated inventory, shop, tutorial, property progr
 
 Download **AFewBuds-Windows-Beta.zip**, extract everything, then run **AFewBuds-3D-Prototype.exe**. Linux players can use the Linux ZIP.
 
-**Updates are manual; this build has no automatic updater.** Sign in with the same account on the [matching mobile version](https://ffdevelopment.github.io/afewbuds-cloud-test/inventory-preview/?v=inventory10). Earlier isolated test saves remain on their original devices; they are not uploaded over the account career.
+**Updates are manual; this build has no automatic updater.** Sign in with the same account on the [matching mobile version](https://ffdevelopment.github.io/afewbuds-beta/). Earlier isolated test saves remain on their original devices; they are not uploaded over the account career.
 
 Chapter 4 can finish through the property move and first house entry. Chapter 5 currently has its opening, not a complete mission chain.
 

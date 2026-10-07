@@ -4,7 +4,7 @@
 
 Choose **AFewBuds-Windows-Beta.zip**, extract the entire ZIP into a folder, and run **AFewBuds-3D-Prototype.exe**. Keep the accompanying files together. A Linux build is also available on the release page.
 
-Sign in with your AFewBuds account to continue your shared career. [Play the matching mobile version](https://ffdevelopment.github.io/afewbuds-cloud-test/inventory-preview/?v=inventory10). Switching devices pauses the previous session and loads its latest confirmed cloud save. Only one play session can be active per account. Guest careers stay on their device.
+Sign in with your AFewBuds account to continue your shared career. [Play the matching mobile version](https://ffdevelopment.github.io/afewbuds-beta/). Switching devices pauses the previous session and loads its latest confirmed cloud save. Only one play session can be active per account. Guest careers stay on their device.
 
 ## Updating
 
