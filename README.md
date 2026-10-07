@@ -1,6 +1,6 @@
 # AFewBuds Desktop Beta
 
-[Download the Windows beta](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases/tag/v0.14.8-beta.1)
+[Download the Windows beta](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases/tag/v0.14.9-beta.1)
 
 Choose **AFewBuds-Windows-Beta.zip**, extract the entire ZIP into a folder, and run **AFewBuds-3D-Prototype.exe**. Keep the accompanying files together. A Linux build is also available on the release page.
 
@@ -20,4 +20,4 @@ Keyboard: E interacts, Shift sprints. Controller: D-pad Up opens the phone, D-pa
 
 ## Build provenance
 
-This beta is built and tested from [desktop source commit 36c0ea7](https://github.com/FFDevelopment/afewbuds-3d-prototype/commit/36c0ea72c83d1f3c02bd53743034e666b8bdf0ef). Internal game version: `0.14.8-inventory.10`. The release includes SHA-256 checksums and a source archive. This repository distributes beta releases; shared game development remains in the desktop and mobile source repositories.
+This beta is built and tested from [desktop source commit a8d899a](https://github.com/FFDevelopment/afewbuds-3d-prototype/commit/a8d899aa439151e20260abcb2edae75f15cd2fcc). Internal game version: `0.14.9-beta.1`. The release includes SHA-256 checksums and a source archive. This repository distributes beta releases; shared game development remains in the desktop and mobile source repositories.

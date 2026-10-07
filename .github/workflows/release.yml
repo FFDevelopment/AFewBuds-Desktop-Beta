@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: 36c0ea72c83d1f3c02bd53743034e666b8bdf0ef
+          ref: a8d899aa439151e20260abcb2edae75f15cd2fcc
           path: source
           persist-credentials: false
       - name: Identify packaged version
@@ -60,7 +60,7 @@ jobs:
           XDG_DATA_HOME="$(mktemp -d)" timeout 60s build/linux/AFewBuds-3D-Prototype.x86_64 --headless -- --export-smoke 2>&1 | tee build/exported-world.log
           if grep -E 'SCRIPT ERROR|^ERROR:' build/exported-world.log; then exit 1; fi
           grep -q 'EXPORTED_WORLD_RESULT: PASS' build/exported-world.log
-          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' '36c0ea72c83d1f3c02bd53743034e666b8bdf0ef' > build/windows/BUILD_VERSION.txt
+          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' 'a8d899aa439151e20260abcb2edae75f15cd2fcc' > build/windows/BUILD_VERSION.txt
           cp build/windows/BUILD_VERSION.txt build/linux/BUILD_VERSION.txt
           cp ../README.md build/windows/README.md
           cp ../README.md build/linux/README.md
@@ -81,4 +81,4 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           set -euo pipefail
-          gh release create "$RELEASE_TAG" --verify-tag --prerelease --title "AFewBuds Desktop Beta 0.14.8" --notes-file ../RELEASE_NOTES.md build/AFewBuds-Windows-Beta.zip build/AFewBuds-Linux-Beta.zip build/AFewBuds-3D-Prototype-Source.zip build/SHA256SUMS.txt
+          gh release create "$RELEASE_TAG" --verify-tag --prerelease --title "AFewBuds Desktop Beta 0.14.9" --notes-file ../RELEASE_NOTES.md build/AFewBuds-Windows-Beta.zip build/AFewBuds-Linux-Beta.zip build/AFewBuds-3D-Prototype-Source.zip build/SHA256SUMS.txt
