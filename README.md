@@ -10,6 +10,6 @@ The first launcher startup requires internet. If an update fails, your installed
 
 The launcher updates the game; changes to the bootstrap launcher itself may require a new launcher download. Linux uses the separate ZIP and manual updates.
 
-Current desktop release: **0.16.0-beta.4**. Includes the beta.3 property fixes. Sign in and load the latest cloud save to resume across desktop and mobile.
+Current desktop release: **0.16.0-beta.5**. Includes the beta.3 property fixes. Sign in and load the latest cloud save to resume across desktop and mobile.
 
 [Downloads](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases)
