@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: fd1632286206dc0bc50a9b5eb75f9cd06aa9296d
+          ref: 95095b490673a3757ffb32db9e5f3373f3bab791
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: fd1632286206dc0bc50a9b5eb75f9cd06aa9296d
+          ref: 95095b490673a3757ffb32db9e5f3373f3bab791
           path: source
           persist-credentials: false
       - uses: actions/download-artifact@v4
@@ -99,7 +99,7 @@ jobs:
           XDG_DATA_HOME="$(mktemp -d)" timeout 60s build/linux/AFewBuds-3D-Prototype.x86_64 --headless -- --export-smoke 2>&1 | tee build/exported-world.log
           if grep -E 'SCRIPT ERROR|^ERROR:' build/exported-world.log; then exit 1; fi
           grep -q 'EXPORTED_WORLD_RESULT: PASS' build/exported-world.log
-          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' 'fd1632286206dc0bc50a9b5eb75f9cd06aa9296d' > build/windows/BUILD_VERSION.txt
+          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' '95095b490673a3757ffb32db9e5f3373f3bab791' > build/windows/BUILD_VERSION.txt
           cp build/windows/BUILD_VERSION.txt build/linux/BUILD_VERSION.txt
           cp ../README.md build/windows/README.md
           cp ../README.md build/linux/README.md
