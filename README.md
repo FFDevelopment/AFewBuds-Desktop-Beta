@@ -1,12 +1,12 @@
 # AFewBuds Desktop Beta
 
-[Download the Windows beta](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases/tag/v0.16.0-beta.1)
+[Download the Windows beta](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases/tag/v0.16.0-beta.2)
 
 Choose **AFewBuds-Windows-Beta.zip**, extract the entire ZIP into a folder, and run **AFewBuds-3D-Prototype.exe**. Keep the accompanying files together. A Linux build is also available on the release page.
 
 Sign in with your AFewBuds account to continue your shared career. [Play the matching mobile version](https://ffdevelopment.github.io/afewbuds-beta/). Switching devices pauses the previous session and loads its latest confirmed cloud save. Only one play session can be active per account. Guest careers stay on their device.
 
-Version 0.16.0-beta.1 fixes false session sign-outs: save conflicts preserve the login and local progress, and incomplete session checks no longer report another active device.
+Version 0.16.0-beta.2 fixes false session sign-outs: save conflicts preserve the login and local progress, and incomplete session checks no longer report another active device.
 
 ## Updating
 
@@ -22,4 +22,6 @@ Keyboard: E interacts, Shift sprints. Controller: D-pad Up opens the phone, D-pa
 
 ## Build provenance
 
-This beta is built and tested from [desktop source commit 1d7ee99](https://github.com/FFDevelopment/afewbuds-3d-prototype/commit/1d7ee99b8579a4a183d36d4966d38f3f35a00e2e). Internal game version: `0.16.0-beta.1`. The release includes SHA-256 checksums and a source archive. This repository distributes beta releases; shared game development remains in the desktop and mobile source repositories.
+This beta is built and tested from [desktop source commit 98e6383](https://github.com/FFDevelopment/afewbuds-3d-prototype/commit/98e6383515ca423110f5988626a2444df1c07aea). Internal game version: `0.16.0-beta.2`. The release includes SHA-256 checksums and a source archive. This repository distributes beta releases; shared game development remains in the desktop and mobile source repositories.
+
+Version 0.16.0-beta.2 restores desktop station prompts and separates property stock and assigned-worker actions. Opening the house no longer changes apartment inventory ownership. Existing recorded contents and saves are preserved.
