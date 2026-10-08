@@ -1,12 +1,12 @@
-AFewBuds Desktop Beta 0.16.0-beta.1
+AFewBuds Desktop Beta 0.16.0-beta.2
 
-- Furniture and equipment can be carried, placed, moved, upgraded and sold. Existing purchases and stock are preserved.
-- Grow tents support 1, 2, 3 or 4 plants. Equipment can be delivered to property curbs; empty it before moving.
-- Full Chapter 5 milestone chain and physical trimming/bagging interactions.
-- Original grow shelves, wall stash and dealer locker models are retained. Migrated utility units no longer block the grow shelf.
-- Preserves the Desktop Beta loading/save/session hotfix. Invalid heartbeat responses cannot invent another session; save conflicts preserve local progress.
-- Shared account careers continue on the public mobile beta: https://ffdevelopment.github.io/afewbuds-beta/.
+- Restores desktop nearby interaction prompts for house stations, including workbenches below eye height.
+- House activation offers make house primary, keep apartment primary, or decide later. Opening the house does not transfer items or reassign staff.
+- Existing apartment workers process apartment batches, use apartment supplies and stock apartment storage. Dealer actions use their assigned property's inventory.
+- House stations and tent supplies stay separate from apartment stock, including existing house-active careers and save/reload.
+- Preserves the equipment system, Chapter 5 updates and cloud-session fix. Existing recorded contents are retained; stock misrouted before this fix is not automatically relocated.
 
-Download AFewBuds-Windows-Beta.zip and extract all files before launching. Desktop updates remain manual. Save & Quit before switching versions or devices. Separate experiment careers are not uploaded over live careers.
+This fixes existing staff isolation; the production-worker hiring limit is unchanged.
 
-Source: 1d7ee99b8579a4a183d36d4966d38f3f35a00e2e
+Download AFewBuds-Windows-Beta.zip into a new folder. Updates remain manual. Keep existing application data.
+Source: 98e6383515ca423110f5988626a2444df1c07aea
