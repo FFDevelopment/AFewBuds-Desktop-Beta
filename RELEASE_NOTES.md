@@ -1,16 +1,10 @@
-AFewBuds desktop beta with the updated inventory, shop, tutorial, property progression, and shared careers.
+Desktop Beta 0.14.9-beta.2 fixes false session sign-outs.
 
-- Backpack weight, storage transfers, categorized shopping, and collection limited by available carrying capacity.
-- Plant, fertilize, and sell from the backpack; packing upgrades improve speed and convenience.
-- Updated tutorial, controller controls, pause menus, and item art.
-- Shared desktop/mobile cloud careers with one active play session per account.
-- One station interaction prompt, matching doors and seating; top notifications clear after four seconds.
-- Windows EXE uses the AFewBuds mobile icon.
+- Save conflicts keep the login and pending local progress instead of falsely reporting another active device and signing the player out.
+- Saves use the server's atomic session and revision checks; equivalent JSON number formatting no longer changes save fingerprints.
+- Incomplete heartbeat responses do not invent a session replacement. Ended-session messages no longer claim another device is active without confirmation.
+- Actual ownership and revision conflicts still block stale uploads. Existing careers and backups are preserved.
 
-Download **AFewBuds-Windows-Beta.zip**, extract everything, then run **AFewBuds-3D-Prototype.exe**. Linux players can use the Linux ZIP.
+Download AFewBuds-Windows-Beta.zip and extract it into a new folder. Updates are manual. Keep your existing application data.
 
-**Updates are manual; this build has no automatic updater.** Sign in with the same account on the [matching mobile version](https://ffdevelopment.github.io/afewbuds-beta/). Earlier isolated test saves remain on their original devices; they are not uploaded over the account career.
-
-Chapter 4 can finish through the property move and first house entry. Chapter 5 currently has its opening, not a complete mission chain.
-
-Source: `a8d899aa439151e20260abcb2edae75f15cd2fcc`. Internal version: `0.14.9-beta.1`. Release publication requires all 20 desktop test suites and the exported-world check to pass. SHA256SUMS.txt contains package checksums.
+This patch is based on the public 0.14.9 beta, with no experimental furniture changes. Source: 57f020c4c942a404fcf17d1e39f3e9d832640050. Publication requires all desktop test suites and the exported-world check to pass.

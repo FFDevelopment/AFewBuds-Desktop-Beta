@@ -1,16 +1,16 @@
 name: Publish desktop beta
 on:
   push:
-    tags: ['v*-beta*']
+    branches: [main]
+    paths: ['.github/workflows/release.yml', 'RELEASE_NOTES.md']
   workflow_dispatch:
 permissions:
   contents: write
 concurrency:
-  group: desktop-beta-${{ github.ref }}
+  group: desktop-beta-release
   cancel-in-progress: false
 jobs:
   release:
-    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     timeout-minutes: 25
     defaults:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: a8d899aa439151e20260abcb2edae75f15cd2fcc
+          ref: 57f020c4c942a404fcf17d1e39f3e9d832640050
           path: source
           persist-credentials: false
       - name: Identify packaged version
@@ -60,7 +60,7 @@ jobs:
           XDG_DATA_HOME="$(mktemp -d)" timeout 60s build/linux/AFewBuds-3D-Prototype.x86_64 --headless -- --export-smoke 2>&1 | tee build/exported-world.log
           if grep -E 'SCRIPT ERROR|^ERROR:' build/exported-world.log; then exit 1; fi
           grep -q 'EXPORTED_WORLD_RESULT: PASS' build/exported-world.log
-          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' 'a8d899aa439151e20260abcb2edae75f15cd2fcc' > build/windows/BUILD_VERSION.txt
+          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' '57f020c4c942a404fcf17d1e39f3e9d832640050' > build/windows/BUILD_VERSION.txt
           cp build/windows/BUILD_VERSION.txt build/linux/BUILD_VERSION.txt
           cp ../README.md build/windows/README.md
           cp ../README.md build/linux/README.md
@@ -78,7 +78,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_TAG: v${{ steps.release.outputs.version }}
         run: |
           set -euo pipefail
-          gh release create "$RELEASE_TAG" --verify-tag --prerelease --title "AFewBuds Desktop Beta 0.14.9" --notes-file ../RELEASE_NOTES.md build/AFewBuds-Windows-Beta.zip build/AFewBuds-Linux-Beta.zip build/AFewBuds-3D-Prototype-Source.zip build/SHA256SUMS.txt
+          gh release create "$RELEASE_TAG" --target "${{ github.sha }}" --prerelease --title "AFewBuds Desktop Beta ${{ steps.release.outputs.version }}" --notes-file ../RELEASE_NOTES.md build/AFewBuds-Windows-Beta.zip build/AFewBuds-Linux-Beta.zip build/AFewBuds-3D-Prototype-Source.zip build/SHA256SUMS.txt
