@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: 98e6383515ca423110f5988626a2444df1c07aea
+          ref: b2ca4a7965e13a433e1653495fc523aae91d9558
           path: source
           persist-credentials: false
       - name: Identify packaged version
@@ -60,7 +60,7 @@ jobs:
           XDG_DATA_HOME="$(mktemp -d)" timeout 60s build/linux/AFewBuds-3D-Prototype.x86_64 --headless -- --export-smoke 2>&1 | tee build/exported-world.log
           if grep -E 'SCRIPT ERROR|^ERROR:' build/exported-world.log; then exit 1; fi
           grep -q 'EXPORTED_WORLD_RESULT: PASS' build/exported-world.log
-          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' '98e6383515ca423110f5988626a2444df1c07aea' > build/windows/BUILD_VERSION.txt
+          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' 'b2ca4a7965e13a433e1653495fc523aae91d9558' > build/windows/BUILD_VERSION.txt
           cp build/windows/BUILD_VERSION.txt build/linux/BUILD_VERSION.txt
           cp ../README.md build/windows/README.md
           cp ../README.md build/linux/README.md
