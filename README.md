@@ -1,10 +1,12 @@
 # AFewBuds Desktop Beta
 
-[Download the Windows beta](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases/tag/v0.14.9-beta.1)
+[Download the Windows beta](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases/tag/v0.14.9-beta.2)
 
 Choose **AFewBuds-Windows-Beta.zip**, extract the entire ZIP into a folder, and run **AFewBuds-3D-Prototype.exe**. Keep the accompanying files together. A Linux build is also available on the release page.
 
 Sign in with your AFewBuds account to continue your shared career. [Play the matching mobile version](https://ffdevelopment.github.io/afewbuds-beta/). Switching devices pauses the previous session and loads its latest confirmed cloud save. Only one play session can be active per account. Guest careers stay on their device.
+
+Version 0.14.9-beta.2 fixes false session sign-outs: save conflicts preserve the login and local progress, and incomplete session checks no longer report another active device.
 
 ## Updating
 
@@ -20,4 +22,4 @@ Keyboard: E interacts, Shift sprints. Controller: D-pad Up opens the phone, D-pa
 
 ## Build provenance
 
-This beta is built and tested from [desktop source commit a8d899a](https://github.com/FFDevelopment/afewbuds-3d-prototype/commit/a8d899aa439151e20260abcb2edae75f15cd2fcc). Internal game version: `0.14.9-beta.1`. The release includes SHA-256 checksums and a source archive. This repository distributes beta releases; shared game development remains in the desktop and mobile source repositories.
+This beta is built and tested from [desktop source commit 57f020c](https://github.com/FFDevelopment/afewbuds-3d-prototype/commit/57f020c4c942a404fcf17d1e39f3e9d832640050). Internal game version: `0.14.9-beta.2`. The release includes SHA-256 checksums and a source archive. This repository distributes beta releases; shared game development remains in the desktop and mobile source repositories.
