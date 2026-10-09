@@ -1,9 +1,9 @@
 AFewBuds Desktop 0.16.0-beta.9
 
 Based on the tested desktop beta.8 source (not the older prototype main branch).
-Candidate validation: https://github.com/FFDevelopment/afewbuds-3d-prototype/actions/runs/37984122772
+Candidate validation: https://github.com/FFDevelopment/afewbuds-3d-prototype/actions/runs/37991053965
 
-- Fix non-custom NPCs such as Tyler appearing inside Malik's model: generic door managers now copy only the default primitive rig and use their own skin/face, never embedded custom GLB avatars.
+- Fix non-custom NPCs such as Tyler appearing inside Malik's model: generic door managers now construct a fresh visible primitive rig without cloning the production worker and use their own skin/face, never embedded custom GLB avatars.
 - Clear leftover Malik/Rod/Kobi character attachments when changing a production worker to a non-custom identity.
 - Keep Agent Reeves permanently visible through Contacts after the protection balance is fully paid.
 - At zero Heat, display the disabled optional paid-favor control with an explanation; text conversations and private visit scheduling remain available.
