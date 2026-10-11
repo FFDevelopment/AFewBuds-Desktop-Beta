@@ -1,15 +1,20 @@
-AFewBuds Desktop Beta 0.16.0-beta.12 — House Furniture Arrangement Hotfix
+AFewBuds Desktop Beta 0.16.0-beta.13 — Correct Packing Benches, Curbside Delivery, Backpack Upgrades
 
-Source: FFDevelopment/afewbuds-3d-prototype @ d416ce549cfeb48f51eb557a23f35078c8889c4a, isolated from beta.11's validated game source. Excludes all experimental avatar redesign and Mission & Story Engine development changes.
+Exact isolated source: FFDevelopment/afewbuds-3d-prototype @ f7b6a5529b4a77a6217ce0eff1f1e8ef8122c410
+Source branch: hotfix/testers-shop-bench-delivery-backpack-20261011. Experimental custom-character art and Mission & Story draft are EXCLUDED.
 
-FIX:
-- Home > Phone > Properties > Maple Flats House > ARRANGE FURNITURE is available when an authorized owner is physically inside the house even if Starter Apartment is selected as the main property.
-- Primary operation selection no longer blocks furniture placement; actual room presence and property ownership are checked instead.
-- House UI opens the existing property-specific furniture manager with Unlock, Move, Pick up and Walk-around Edit Mode controls.
-- Remote editing from another property or outside remains blocked; no access is granted to unowned properties.
-- House/apartment stock and furniture remain separate. Existing tents, layouts, furnishings, workers, money and career saves are not modified by this hotfix.
-- Save schema, cloud identity/session, starter apartment access, Unstuck and stair-landing collision fixes remain unchanged.
+RESTORED
+- Market-purchased Packing Benches now reuse the approved apartment model with its detailed scale, trim tray, tools, bag supply and jars. The placement preview uses the same finished model, not the simplified temporary box-table.
+- Existing hand-trimming (scissors) and drag-to-bag/weigh/seal interactions remain connected to the packing station and its property-scoped inventory.
+- Central Market cart checkout now offers Market Pickup, Apartment Curbside Delivery or House Curbside Delivery for equipment/furniture, limited to properties actually controlled by the player. The destination is checked before charging; paid delivery crates remain at the chosen curb until collected.
+- Seeds and fertilizer still use Central Market pickup (or automatic collection while standing at checkout), never automatic house stock transfer.
+- Backpack level upgrade buttons restored at Central Market > Upgrades: 35/55/80/110 lb, upgrade costs $250/$750/$1,750; saved backpack level retained and each purchase charges once.
+- Phone > Shop > Shop Upgrades now shows backpack level, next tier, prices and equipment families. Phone catalog is read-only; upgrades are bought onsite.
 
-QA: property-isolation regression with house owned and apartment-primary career verifies enabled phone button, opening correct property editor, no save or furniture mutations, and remote denial. Full desktop gameplay/save, exported-world and launcher updater/rollback checks must pass before the beta is published.
+UNCHANGED
+- Prior beta.12 house furniture arrangement fix stays intact.
+- No edits to production-worker AI or grow-tent planting cadence.
+- Existing accounts, careers, money, furniture positions, tents, stocked packing benches, property inventory, workers, story and saved backpack level are preserved.
+- Save path remains AFewBuds-Inventory-Preview; cloud/account sync and the original automatic SHA-256 Windows Launcher update/rollback mechanism are unchanged.
 
-Windows: Launch the installed AFewBuds Launcher for automatic SHA-256-verified updating to beta.12, without reinstallation. Direct older game executables and Linux ZIP installations require manual update.
+Release gating: full desktop Godot import, real house curb/delivery and packing bench tests, careers/save suites, Windows/Linux exports and smoke tests, updater/launcher tests, SHA-256 packaging. Windows users opening the existing AFewBuds Launcher should receive beta.13 when publication succeeds; direct executable and Linux ZIP users update manually.
