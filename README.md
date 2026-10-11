@@ -1,15 +1,13 @@
 # AFewBuds Desktop Beta
 
-## Windows: automatic updates
+## Windows automatic updates
 
-Download **AFewBuds-Launcher.exe** from the newest release and open it. It downloads and verifies the current game, then starts it. Keep using this launcher or a shortcut to it for automatic game updates. No Python installation or administrator access is needed.
+Use **AFewBuds-Launcher.exe** from the [latest release](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases). The existing launcher checks the same release feed every time it starts and downloads a newer complete, SHA-256-verified Windows beta when available. A beta.9 launcher can update to beta.10 without reinstalling the launcher.
 
-If you download the full Windows ZIP instead, extract the whole ZIP and open **AFewBuds.exe**. The older **AFewBuds-3D-Prototype.exe** starts the game directly and does not check for updates.
+The launcher installs into its own per-user folder and **never clears game saves or logins**. It keeps the previous verified game for rollback if a new build fails to launch. A failed download or offline startup retains the installed build.
 
-The first launcher startup requires internet. If an update fails, your installed game is retained and you can retry or choose Play installed. Updates never run while a launcher-managed game is open. Existing saves and account login files stay in their original directory; do not delete application data when updating.
+**Important:** Opening an older **AFewBuds-3D-Prototype.exe** directly does *not* check for updates. Open the existing launcher instead. Extracted ZIP copies must be updated manually unless started through the launcher. Linux beta ZIPs are also manually updated.
 
-The launcher updates the game; changes to the bootstrap launcher itself may require a new launcher download. Linux uses the separate ZIP and manual updates.
+Current desktop release: **0.16.0-beta.10**. Includes the latest tested house operations, furniture-aware NPC navigation and realistic door staff movement, graphics quality presets, and the shared property/item foundations. Gameplay uses the same `AFewBuds-Inventory-Preview` Godot save directory and existing cloud-account protocol as beta.9.
 
-Current desktop release: **0.16.0-beta.7**. Includes house-specific computers, production workers, grow-room tent and ventilation synchronization, updated furniture placement, and restored packing workflows. Sign in and load the latest cloud save to resume across desktop and mobile.
-
-[Downloads](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases)
+[Download the newest desktop beta](https://github.com/FFDevelopment/AFewBuds-Desktop-Beta/releases)
