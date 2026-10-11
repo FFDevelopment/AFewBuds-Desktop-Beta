@@ -1,15 +1,11 @@
-AFewBuds Desktop Beta 0.16.0-beta.10
+AFewBuds Desktop Beta 0.16.0-beta.11 — Landing Collision & Safe Recovery Hotfix
 
-Source: FFDevelopment/afewbuds-3d-prototype @ 833761e9c4a38cbb3ab03779c2ec8bc3f481c665 (validated desktop development main). The unfinished Mission & Story Engine draft is NOT included.
+Source: FFDevelopment/afewbuds-3d-prototype @ c5dfc410dd3fc2c697e8f312f507e45f2f2ad131 (hotfix isolated from unfinished mission and character creator branches).
 
-- House workers navigate between rooms, doorways, stairway and stations instead of walking through walls; furniture rearrangement updates route blockers.
-- Door staff use a distinct property role, walk at natural speeds, stand up before serving, pause to complete each sale and return using sofa-safe approach points.
-- The current property manager keeps employees, grow tents, inventory, doors, bills and stock scoped to apartment or house.
-- Add Low / Medium / High graphics quality presets in Pause > Settings, stored per device without changing career data or furniture models.
-- Preserve the shared PropertyRegistry and ItemRegistry foundations for later expansions.
-- Preserve beta.9 fixes for NPC visual identity and Reeves contacts after payoff.
-- No player-character creator and no experimental mission/story draft in this release.
+- Apartment 201 and 301 on the starter building side fire escape now have full-height, non-interactive solid door collision. Exterior landings, roof stair route, handrails, apartment window dressing and original NPC entrances remain intact.
+- Added UNSTUCK · RETURN TO SAFE SPOT to Pause, accessible via keyboard, controller and touch UI. Recovery checks the last verified safe grounded checkpoint or an approved nearby anchor with the same player capsule and a support ray, rather than teleporting through other property walls.
+- 25-second cooldown and velocity reset prevent repeated teleporting and preserve pause control. Recovery saves only the corrected position through existing career save logic.
+- Preserve property ownership, money, furniture, workers, inventory, genetics, story, save schema, cloud account/session protocol, and previous beta.10 NPC/door pacing and graphics quality presets.
+- Unfinished Mission & Story Engine and future customizable character changes are excluded.
 
-Upgrade safety: keep the existing user-data directory AFewBuds-Inventory-Preview, cloud account/session system and save schema; do not clear career data. The existing Windows launcher selects the latest verified v0.16.0-beta.N release. Direct older game executables and Linux ZIPs do not self-update.
-
-Publication must pass the full Godot import, gameplay/career tests, Windows/Linux exports, exported-world smoke, launcher unit tests, launcher UI smoke and SHA-256 package checks.
+Release gating: headless Godot import, live physics door/raycast and recovery tests, complete gameplay/save tests, exported Windows/Linux runtime, launcher update/rollback tests, Windows launcher smoke, SHA-256 package validation. The official launcher will select v0.16.0-beta.11 when published. Old stand-alone executables do not auto-update.
