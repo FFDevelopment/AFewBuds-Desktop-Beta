@@ -63,10 +63,6 @@ jobs:
           path: source/launcher-binary
       - name: Test updater on Linux
         run: python -m unittest discover -s launcher -v
-      - name: Identify packaged version
-        id: release
-        run: |
-          python -c 'import re; from pathlib import Path; print("version=" + re.search(r"config/version=\"([^\"]+)", Path("game/project.godot").read_text()).group(1))' >> "$GITHUB_OUTPUT"
       - name: Set public beta identity without changing tester save location
         run: |
           python - <<'PY'
@@ -79,6 +75,10 @@ jobs:
           s=s.replace('config/name="AFewBuds Desktop Development"', 'config/name="AFewBuds"', 1)
           p.write_text(s)
           PY
+      - name: Identify packaged version
+        id: release
+        run: |
+          python -c 'import re; from pathlib import Path; print("version=" + re.search(r"config/version=\"([^\"]+)", Path("game/project.godot").read_text()).group(1))' >> "$GITHUB_OUTPUT"
       - name: Install Godot 4.7.2 and desktop export templates
         run: |
           set -euo pipefail
