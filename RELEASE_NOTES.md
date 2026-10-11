@@ -1,20 +1,23 @@
-AFewBuds Desktop Beta 0.16.0-beta.13 — Correct Packing Benches, Curbside Delivery, Backpack Upgrades
+AFewBuds Desktop Beta 0.16.0-beta.14 — Independent Property Workers and Equipment Progression
 
-Exact isolated source: FFDevelopment/afewbuds-3d-prototype @ f7b6a5529b4a77a6217ce0eff1f1e8ef8122c410
-Source branch: hotfix/testers-shop-bench-delivery-backpack-20261011. Experimental custom-character art and Mission & Story draft are EXCLUDED.
+Verified development source: FFDevelopment/afewbuds-3d-prototype @ 780f4436bcda670e0bbbe55d7d7d285ca8b0fb3f
+Validated desktop CI: https://github.com/FFDevelopment/afewbuds-3d-prototype/actions/runs/38172205573
 
-RESTORED
-- Market-purchased Packing Benches now reuse the approved apartment model with its detailed scale, trim tray, tools, bag supply and jars. The placement preview uses the same finished model, not the simplified temporary box-table.
-- Existing hand-trimming (scissors) and drag-to-bag/weigh/seal interactions remain connected to the packing station and its property-scoped inventory.
-- Central Market cart checkout now offers Market Pickup, Apartment Curbside Delivery or House Curbside Delivery for equipment/furniture, limited to properties actually controlled by the player. The destination is checked before charging; paid delivery crates remain at the chosen curb until collected.
-- Seeds and fertilizer still use Central Market pickup (or automatic collection while standing at checkout), never automatic house stock transfer.
-- Backpack level upgrade buttons restored at Central Market > Upgrades: 35/55/80/110 lb, upgrade costs $250/$750/$1,750; saved backpack level retained and each purchase charges once.
-- Phone > Shop > Shop Upgrades now shows backpack level, next tier, prices and equipment families. Phone catalog is read-only; upgrades are bought onsite.
+PRODUCTION WORKERS
+- One independent production worker position at each controlled property: apartment and house. Hire a generic worker from that property's management screen or offer a loyal friend production work for a specific property through Contacts.
+- Each worker has its own assignment, duty status, navigation actor, tasks, auto-plant preference, wage and save record. Work uses only that property's stored seeds, harvests and equipment.
+- Transferring a worker frees the source position, does not duplicate a character, and is blocked when the destination position is occupied. Firing one worker does not terminate the other.
+- Existing workers and their property assignments migrate into the new per-property records. Active workers may continue limited finite-stock watering/fertilizing while away, without offline planting, harvesting, processing or sales.
 
-UNCHANGED
-- Prior beta.12 house furniture arrangement fix stays intact.
-- No edits to production-worker AI or grow-tent planting cadence.
-- Existing accounts, careers, money, furniture positions, tents, stocked packing benches, property inventory, workers, story and saved backpack level are preserved.
-- Save path remains AFewBuds-Inventory-Preview; cloud/account sync and the original automatic SHA-256 Windows Launcher update/rollback mechanism are unchanged.
+EQUIPMENT & FURNITURE
+- Central Market sells the Level I version of equipment. Upgrade each placed bench, shelf, storage or dealer locker from Furniture Arrangement for the tier price difference, subject to the original Grower-level requirements.
+- Grow tents retain their separate 1/2/3/4-plant sizes and include Basic Light I. Upgrade a specific tent to LED Grow Light II for $320 at the required level, replacing the fixture without uprooting planted crops.
+- Tight centimeter furniture placement and room-edge fit let Packing Bench III sit near a wall without rejecting harmless baseboards; actual structural walls, doorways and furniture intersections remain blocked.
 
-Release gating: full desktop Godot import, real house curb/delivery and packing bench tests, careers/save suites, Windows/Linux exports and smoke tests, updater/launcher tests, SHA-256 packaging. Windows users opening the existing AFewBuds Launcher should receive beta.13 when publication succeeds; direct executable and Linux ZIP users update manually.
+RETAINED FROM PREVIOUS TESTER HOTFIX
+- Approved apartment-style packing benches and trim/bag animations for purchased stations, property curbside equipment deliveries, backpack upgrades, and the read-only Phone Shop upgrade catalog remain included.
+- Existing accounts, property ownership, inventory, placed furniture, financial records, cloud/account sync, and the AFewBuds-Inventory-Preview save directory are preserved.
+
+RELEASE GATES
+- Full Godot regression suite passed: independent property workers (29), tester shop (37), property isolation (106), equipment v2 (85), and exported-world smoke; Windows/Linux exports passed.
+- Public release rebuild also validates launcher, export, saves and SHA-256 ZIP integrity before the release tag is published.

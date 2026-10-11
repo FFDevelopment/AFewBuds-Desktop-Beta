@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: f7b6a5529b4a77a6217ce0eff1f1e8ef8122c410
+          ref: 780f4436bcda670e0bbbe55d7d7d285ca8b0fb3f
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: f7b6a5529b4a77a6217ce0eff1f1e8ef8122c410
+          ref: 780f4436bcda670e0bbbe55d7d7d285ca8b0fb3f
           path: source
           persist-credentials: false
       - uses: actions/download-artifact@v4
@@ -71,7 +71,7 @@ jobs:
           s=p.read_text()
           for entry in ['config/version="0.16.0-dev.17"', 'config/name="AFewBuds Desktop Development"', 'config/use_custom_user_dir=true', 'config/custom_user_dir_name="AFewBuds-Inventory-Preview"', 'run/main_scene="res://account/login.tscn"']:
               assert entry in s, f'Public beta identity or save-path drift: {entry}'
-          s=s.replace('config/version="0.16.0-dev.17"', 'config/version="0.16.0-beta.13"', 1)
+          s=s.replace('config/version="0.16.0-dev.17"', 'config/version="0.16.0-beta.14"', 1)
           s=s.replace('config/name="AFewBuds Desktop Development"', 'config/name="AFewBuds"', 1)
           p.write_text(s)
           PY
@@ -111,7 +111,7 @@ jobs:
           XDG_DATA_HOME="$(mktemp -d)" timeout 60s build/linux/AFewBuds-3D-Prototype.x86_64 --headless -- --export-smoke 2>&1 | tee build/exported-world.log
           if grep -E 'SCRIPT ERROR|^ERROR:' build/exported-world.log; then exit 1; fi
           grep -q 'EXPORTED_WORLD_RESULT: PASS' build/exported-world.log
-          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' 'f7b6a5529b4a77a6217ce0eff1f1e8ef8122c410' > build/windows/BUILD_VERSION.txt
+          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' '780f4436bcda670e0bbbe55d7d7d285ca8b0fb3f' > build/windows/BUILD_VERSION.txt
           cp build/windows/BUILD_VERSION.txt build/linux/BUILD_VERSION.txt
           cp ../README.md build/windows/README.md
           cp ../README.md build/linux/README.md
