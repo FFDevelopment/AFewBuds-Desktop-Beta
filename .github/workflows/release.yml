@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: c5dfc410dd3fc2c697e8f312f507e45f2f2ad131
+          ref: d416ce549cfeb48f51eb557a23f35078c8889c4a
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: FFDevelopment/afewbuds-3d-prototype
-          ref: c5dfc410dd3fc2c697e8f312f507e45f2f2ad131
+          ref: d416ce549cfeb48f51eb557a23f35078c8889c4a
           path: source
           persist-credentials: false
       - uses: actions/download-artifact@v4
@@ -71,7 +71,7 @@ jobs:
           s=p.read_text()
           for entry in ['config/version="0.16.0-dev.17"', 'config/name="AFewBuds Desktop Development"', 'config/use_custom_user_dir=true', 'config/custom_user_dir_name="AFewBuds-Inventory-Preview"', 'run/main_scene="res://account/login.tscn"']:
               assert entry in s, f'Public beta identity or save-path drift: {entry}'
-          s=s.replace('config/version="0.16.0-dev.17"', 'config/version="0.16.0-beta.11"', 1)
+          s=s.replace('config/version="0.16.0-dev.17"', 'config/version="0.16.0-beta.12"', 1)
           s=s.replace('config/name="AFewBuds Desktop Development"', 'config/name="AFewBuds"', 1)
           p.write_text(s)
           PY
@@ -82,10 +82,10 @@ jobs:
       - name: Install Godot 4.7.2 and desktop export templates
         run: |
           set -euo pipefail
-          curl -fL --retry 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          curl -fL --retry-all-errors --retry 8 --retry-delay 3 -o /tmp/godot.zip https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
           unzip -q /tmp/godot.zip -d /tmp/godot
           echo /tmp/godot >> "$GITHUB_PATH"
-          curl -fL --retry 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz
+          curl -fL --retry-all-errors --retry 8 --retry-delay 3 -o /tmp/templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz
           mkdir -p ~/.local/share/godot/export_templates/4.7.2.stable
           unzip -j -q /tmp/templates.tpz 'templates/windows_release_x86_64.exe' 'templates/windows_release_x86_64_console.exe' 'templates/linux_release.x86_64' 'templates/version.txt' -d ~/.local/share/godot/export_templates/4.7.2.stable
       - name: Recover and retain pinned AFewBuds assets on first build
@@ -111,7 +111,7 @@ jobs:
           XDG_DATA_HOME="$(mktemp -d)" timeout 60s build/linux/AFewBuds-3D-Prototype.x86_64 --headless -- --export-smoke 2>&1 | tee build/exported-world.log
           if grep -E 'SCRIPT ERROR|^ERROR:' build/exported-world.log; then exit 1; fi
           grep -q 'EXPORTED_WORLD_RESULT: PASS' build/exported-world.log
-          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' 'c5dfc410dd3fc2c697e8f312f507e45f2f2ad131' > build/windows/BUILD_VERSION.txt
+          printf 'AFewBuds Desktop %s\nSource: %s\n' '${{ steps.release.outputs.version }}' 'd416ce549cfeb48f51eb557a23f35078c8889c4a' > build/windows/BUILD_VERSION.txt
           cp build/windows/BUILD_VERSION.txt build/linux/BUILD_VERSION.txt
           cp ../README.md build/windows/README.md
           cp ../README.md build/linux/README.md

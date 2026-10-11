@@ -1,11 +1,15 @@
-AFewBuds Desktop Beta 0.16.0-beta.11 — Landing Collision & Safe Recovery Hotfix
+AFewBuds Desktop Beta 0.16.0-beta.12 — House Furniture Arrangement Hotfix
 
-Source: FFDevelopment/afewbuds-3d-prototype @ c5dfc410dd3fc2c697e8f312f507e45f2f2ad131 (hotfix isolated from unfinished mission and character creator branches).
+Source: FFDevelopment/afewbuds-3d-prototype @ d416ce549cfeb48f51eb557a23f35078c8889c4a, isolated from beta.11's validated game source. Excludes all experimental avatar redesign and Mission & Story Engine development changes.
 
-- Apartment 201 and 301 on the starter building side fire escape now have full-height, non-interactive solid door collision. Exterior landings, roof stair route, handrails, apartment window dressing and original NPC entrances remain intact.
-- Added UNSTUCK · RETURN TO SAFE SPOT to Pause, accessible via keyboard, controller and touch UI. Recovery checks the last verified safe grounded checkpoint or an approved nearby anchor with the same player capsule and a support ray, rather than teleporting through other property walls.
-- 25-second cooldown and velocity reset prevent repeated teleporting and preserve pause control. Recovery saves only the corrected position through existing career save logic.
-- Preserve property ownership, money, furniture, workers, inventory, genetics, story, save schema, cloud account/session protocol, and previous beta.10 NPC/door pacing and graphics quality presets.
-- Unfinished Mission & Story Engine and future customizable character changes are excluded.
+FIX:
+- Home > Phone > Properties > Maple Flats House > ARRANGE FURNITURE is available when an authorized owner is physically inside the house even if Starter Apartment is selected as the main property.
+- Primary operation selection no longer blocks furniture placement; actual room presence and property ownership are checked instead.
+- House UI opens the existing property-specific furniture manager with Unlock, Move, Pick up and Walk-around Edit Mode controls.
+- Remote editing from another property or outside remains blocked; no access is granted to unowned properties.
+- House/apartment stock and furniture remain separate. Existing tents, layouts, furnishings, workers, money and career saves are not modified by this hotfix.
+- Save schema, cloud identity/session, starter apartment access, Unstuck and stair-landing collision fixes remain unchanged.
 
-Release gating: headless Godot import, live physics door/raycast and recovery tests, complete gameplay/save tests, exported Windows/Linux runtime, launcher update/rollback tests, Windows launcher smoke, SHA-256 package validation. The official launcher will select v0.16.0-beta.11 when published. Old stand-alone executables do not auto-update.
+QA: property-isolation regression with house owned and apartment-primary career verifies enabled phone button, opening correct property editor, no save or furniture mutations, and remote denial. Full desktop gameplay/save, exported-world and launcher updater/rollback checks must pass before the beta is published.
+
+Windows: Launch the installed AFewBuds Launcher for automatic SHA-256-verified updating to beta.12, without reinstallation. Direct older game executables and Linux ZIP installations require manual update.
