@@ -1,20 +1,26 @@
-AFewBuds Desktop Beta 0.16.0-beta.18 — Combined Stock Across Multiple Storage Units
+AFewBuds Desktop Beta 0.16.0-beta.19 — Physical Customer Visits, Emergency Heat Shutdown & Storage/UI Fixes
 
 VERIFIED DESKTOP SOURCE
-- FFDevelopment/afewbuds-3d-prototype main @ 4105509fa94e18a9f5b6517dd8d547dd7db7d0f0
-- Full Godot source build, isolated-save tests, Windows/Linux exports and exported world validated:
-  https://github.com/FFDevelopment/afewbuds-3d-prototype/actions/runs/38294860457
-- All 28 new multi-storage checks passed alongside existing 55 production worker checks and the rest of the gameplay suite.
+- FFDevelopment/afewbuds-3d-prototype main @ 48871a0671119ffdca7a66bab8036643cb3aecad
+- Full headless Godot gameplay, mission and physical visitor, inventory, staff, save, Windows/Linux export and exported-world validation:
+  https://github.com/FFDevelopment/afewbuds-3d-prototype/actions/runs/38299690391
 
-PROPERTY INVENTORY
-- Listing menu, Storage window and Property overview count packaged product in every installed storage unit at that property, not only the legacy primary shelf.
-- Reservations apply once across a property's physical inventory. Selling first consumes available packaged grams across that property's installed units without negative stock, double sales, or consuming reserved grams.
-- Stock in a secondary shelf can be listed even when the original primary shelf is empty.
-- Manual packaging, production workers, and Dealer Locker returns distribute deposits across available unit capacity instead of overfilling primary storage.
-- Dealer and staffed doorstep sales as well as friend purchases debit actual storage records. Uninstalled or packed storage units are excluded from available stock.
-- House and apartment balances, metadata, pricing, reservations and ownership remain independent.
+CUSTOMER INTERACTION
+- First playable physical doorstep customer experience at the apartment. Open the actual door and interact with the visible 3D NPC using the existing SELL, SUBSTITUTE or DECLINE actions.
+- Clients walk down the sidewalk before despawning away from the front door. Some buyers can ask to hang out after a purchase; a completed social encounter gives relationship loyalty once per customer per in-game day.
+- Special encounters such as Agent Reeves retain their existing story route. The legacy peephole remains as a fallback. Roaming pedestrians and off-site scheduled meetups are still in development.
 
-SAFETY
-- Storage record IDs and each original inventory payload are preserved; no save migration, character reset, deletion, or destructive aggregation is performed.
-- Existing cloud and local saves, properties, workers, furniture upgrades, career stats, and updater stay unchanged.
-- Public release re-verifies launcher and update transactions, complete gameplay suite, Windows/Linux exports, and SHA-256 packages before publication.
+HIGH HEAT / OWNER CONTROL
+- Phone > Heat and the owned property menu offer CLOSE SHOP and SHUT DOWN & LAY LOW without any on-duty worker or Heat prerequisite.
+- Off-duty workers still accept emergency CLOSE and SHUT DOWN commands, while OPEN, REOPEN and return-to-duty remain restricted at high Heat or during raids.
+- Lay Low closes incoming business and saves/restores the property's equipment settings without reassigning workers or mixing property state.
+
+INVENTORY & LISTING
+- Property stock listings include all installed storage units at that property. Secondary storage no longer appears missing.
+- Reservations are subtracted exactly once. Player, dealer, production and staff sales/deposits debit and credit the correct physical storage bins without duplication.
+- LIST/UNLIST actions remain readable on compact desktop/window and mobile-style layouts.
+
+TESTED / SAFETY
+- Each platform has separate independent tests for all combined features. The source regression completed successfully.
+- Public workflow must separately validate Windows updater, launcher smoke, save safety, Windows/Linux exports, checksum packaging and verified release artifacts.
+- Same account and career protocol, Godot save directory (AFewBuds-Inventory-Preview), legacy storage assets, house/apartment ownership, genetics, cash and employee assignments as the last public release.
