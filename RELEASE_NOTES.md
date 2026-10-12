@@ -1,26 +1,20 @@
-AFewBuds Desktop Beta 0.16.0-beta.16 — House Packing, Basement Grow Floor & Worker Animation Repair
+AFewBuds Desktop Beta 0.16.0-beta.17 — Production Duty & Wall-Mounted Equipment Hotfix
 
 VERIFIED SOURCE
-- FFDevelopment/afewbuds-3d-prototype main @ de69bfed032fc2cc40efa0f6c416aac71fcf0bbb
-- Full Godot, Windows/Linux exports and exported-world test passed: https://github.com/FFDevelopment/afewbuds-3d-prototype/actions/runs/38184273629
+- FFDevelopment/afewbuds-3d-prototype main @ 30dfabae98cd5e8c58b9a597953c792a7ae5aea2
+- Complete Godot gameplay/test suite, Windows/Linux exports and exported-world smoke passed: https://github.com/FFDevelopment/afewbuds-3d-prototype/actions/runs/38200776186
 
-HOUSE PACKING BENCH
-- Purchased Packing Bench III uses the full-size apartment-style finished bench rather than a smaller substitute, including its tabletop, trim tray, scale and jars.
-- Real, independently stored house-bench inventory now supports the complete manual trimming and bagging interaction. Each scoop, pour and seal commits stock only after the completed interaction.
-- Workers' trim and bag actions now target the actual purchased station and its scale/tray, with physical character props and animations. House and apartment inventory remain isolated.
-- Bench III can fit against the usable packing-room wall at full size, with real wall, furniture and door collisions still enforced.
+NIGHTLY PRODUCTION DUTY
+- Production workers no longer lose their intended duty assignment permanently when their nightly wage comes due before the dealer drop-off is settled.
+- If wages cannot be paid at closeout, the worker pauses instead of working unpaid. Once sufficient cash is available and safety restrictions permit, the owed wage is paid once and the previously active shift resumes automatically.
+- Explicitly sending someone home remains off duty. Heat-related lockdowns, arrests and unpaid bail are not overridden.
+- Existing house and apartment production roles, pay, crops, workers, automation, inventory and saved duty choices stay intact.
 
-HOUSE ROOM / BASEMENT
-- Packing, living and other upstairs placement boundaries follow the structural interior walls, not undersized legacy rectangles.
-- Basement grow floor covers the usable east wing as well as the original grow section. Tents and equipment use basement-height coordinates, with stairwell and rail exclusion maintained.
-- Furniture and bench interactions use their installed floor height; downstairs containers no longer float upstairs.
-- Furniture placement and walk-around arrangement stay restricted to rooms and current floor; historical ownership/save keys remain unchanged.
+FURNITURE ARRANGEMENT
+- Mounted auto-waterers and ventilation units are selectable while looking at them in walk-around furniture arrangement.
+- Target the equipment at its actual elevated world location, not ground level. Selection remains restricted to the correct property and floor (including house basement).
+- The arrangement controls support moving or picking up a mounted unit without altering existing ownership, upgrade level or saved placement.
 
-PRODUCTION, SHOP & SAVES
-- Retains independent production workers per apartment and house, per-property hiring, wages, automation, stock, duty, and transfer controls.
-- Retains Level I equipment purchase flow, progression-gated station upgrades, tent LED upgrades, property deliveries, backpack tiers and Phone Shop upgrade browsing.
-- Protects existing career, cash, genetics, property ownership, seeds, stock, account sessions and cloud saves.
-
-RELEASE GATES
-- Desktop passed 36 property staff checks, 37 shop checks, 44 room/basement checks, 33 packing parity checks, 106 property isolation checks, 85 equipment checks and the exported-world smoke test.
-- Public Windows launcher, updater transactions, source pin, Windows/Linux export and SHA-256 assets must separately pass before publishing v0.16.0-beta.16.
+RELEASE SAFETY
+- Mobile and desktop share the same payroll logic; this desktop beta uses the desktop-tested source.
+- Public release independently tests updater behavior, builds launcher, reruns Godot gameplay tests, verifies Windows/Linux exports, checks file hashes and publishes an update without changing the save directory or login identity.
